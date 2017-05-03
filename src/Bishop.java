@@ -1,7 +1,7 @@
 
 public class Bishop extends Piece {
-	public Bishop(int[][] pos, String color) {
-		super(pos, color);
+	public Bishop(int r, int c, String color) {
+		super(r, c, color);
 	}
 
 }

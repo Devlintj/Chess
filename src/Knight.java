@@ -1,7 +1,7 @@
 
 public class Knight extends Piece {
-	public Knight(int[][] pos, String color) {
-		super(pos, color);
+	public Knight(int r, int c, String color) {
+		super(r, c, color);
 	}
 
 }

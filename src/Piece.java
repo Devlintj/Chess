@@ -1,14 +1,17 @@
 
 public class Piece {
-	private int[][] pos;
+	private int row;
+	private int col;
 	private String color;
-	Piece(int[][] pos, String color) {
-		this.pos = pos;
+	Piece(int row, int col, String color) {
+		this.row = row;
+		this.col = col;
 		this.color = color;
 	}
 	
-	public void move(int[][] destination) {
-		pos = destination;
+	public void move(int r, int c, Board board) {
+		row = r;
+		col = c;
 	}
 	
 	public void removePiece() {
@@ -19,8 +22,12 @@ public class Piece {
 		
 	}
 	
-	public int[][] getPos() {
-		return pos;
+	public int getRow() {
+		return row;
+	}
+	
+	public int getCol() {
+		return col;
 	}
 	
 	public String getColor() {

@@ -1,8 +1,8 @@
 
 public class King extends Piece {
 	private boolean hasMoved = false;
-	public King(int[][] pos, String color) {
-		super(pos, color);
+	public King(int r, int c, String color) {
+		super(r, c, color);
 	}
 
 }
