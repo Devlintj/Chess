@@ -6,7 +6,7 @@ public abstract class Piece {
 	private boolean selected;
 	private String color;
 
-	Piece(int row, int col, int val, String color) {
+	public Piece(int row, int col, int val, String color) {
 		this.row = row;
 		this.col = col;
 		this.value = val;
