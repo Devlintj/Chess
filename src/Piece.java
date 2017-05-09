@@ -5,7 +5,7 @@ public abstract class Piece {
 	private int col;
   private int value;
 	private boolean selected;
-  private boolean firstMove;
+  private boolean hasMoved;
 	private String color;
 
 	public Piece(int row, int col, int val, String color) {
@@ -14,7 +14,7 @@ public abstract class Piece {
 		this.value = val;
 		this.color = color;
     this.selected = false;
-    this.firstMove = true;
+    this.hasMoved = false;
 	}
 	
   public void select() {
@@ -33,7 +33,7 @@ public abstract class Piece {
     {
 		  row = r;
 		  col = c;
-      if (firstMove) firstMove = false;
+      if (!hasMoved) hasMoved = true;
       return true;
     }
     return false;
@@ -56,6 +56,12 @@ public abstract class Piece {
 	public int getCol() {
 		return col;
 	}
+  public void setCords(int r, int c)
+  {
+    row = r;
+    col = c;
+    hasMoved = true;
+  }
 	
 	public String getColor() {
 		return color;
