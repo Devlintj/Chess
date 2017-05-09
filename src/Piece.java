@@ -1,9 +1,11 @@
+//import java.util.*;
 
 public abstract class Piece {
 	private int row;
 	private int col;
   private int value;
 	private boolean selected;
+  private boolean firstMove;
 	private String color;
 
 	public Piece(int row, int col, int val, String color) {
@@ -11,7 +13,8 @@ public abstract class Piece {
 		this.col = col;
 		this.value = val;
 		this.color = color;
-    selected = false;
+    this.selected = false;
+    this.firstMove = true;
 	}
 	
   public void select() {
@@ -23,9 +26,17 @@ public abstract class Piece {
   public boolean isSelected() {
     return selected;
   }
-	public void move(int r, int c, Board board) {
-		row = r;
-		col = c;
+  public abstract boolean isLegal(int r, int c);
+  
+	public boolean move(int r, int c, Board board) {
+    if (isLegal(r,c))
+    {
+		  row = r;
+		  col = c;
+      if (firstMove) firstMove = false;
+      return true;
+    }
+    return false;
 	}
 	
 	public void removePiece() {
