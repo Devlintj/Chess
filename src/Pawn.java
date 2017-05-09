@@ -1,8 +1,8 @@
 
 public class Pawn extends Piece {
-	private boolean hasMoved = false;
+
 	public Pawn(int r, int c, String color) {
-		super(r, c, color);
+		super(r, c, 1, color);
 	}
 	
 	public void move(int[][] destination, Board board) {
@@ -10,5 +10,12 @@ public class Pawn extends Piece {
 			
 		}
 	}
+
+  @Override
+  public boolean isLegal(int r, int c)
+  {
+    return c > 0 && r == 0 && 
+    ((!hasMoved&&c<=2)||(hasMoved&&c==1));
+  }
 
 }
